@@ -16,5 +16,5 @@ This game is not easy, but you can actually discover mysterious treasure, if you
 
 this is a proof!
 
-![this is a proof!](Discovered Treasure.PNG)
+![picture](Discovered Treasure.PNG)
 
