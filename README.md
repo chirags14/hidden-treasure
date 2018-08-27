@@ -1,6 +1,6 @@
 # Welcome to The Amer Fort (A Land Of Mysterious Treasure)
 This is command line based RPG game.
-This game is based on one of most popular fort located in western part of India.Fort was ruled by various famous kingdoms and one of kingdoms stored mysterious treasure during his rule.There are many rooms in this fort. 
+This game is based on one of most popular fort located in western part of India.Fort was ruled by various famous kingdoms and one of kingdom stored mysterious treasure during his rule.There are many rooms in this fort. 
 There are riddle-loving-monsters surrounding a treasure in a fort.
 You have to answer monster riddle.
 If you answer correctly you will get gems.It will give you hints if you pay gems by typing '#pay'.You can type '#giveup' to fight the monster.
