@@ -11,7 +11,7 @@ import com.treasure.group.hiddentreasure.model.Palace;
 import com.treasure.group.hiddentreasure.model.User;
 import com.treasure.group.hiddentreasure.service.HiddenTreasureUIservice;
 import com.treasure.group.hiddentreasure.service.impl.HiddenTreasureConsoleBasedUI;
-import com.treasure.group.hiddentreasure.service.impl.HiddenTreasureUserManageCLI;
+import com.treasure.group.hiddentreasure.service.impl.HiddenTreasurePlayerRepositoryImpl;
 import com.treasure.group.hiddentreasure.utils.HiddenTreasureConstants;
 
 /**
@@ -27,7 +27,7 @@ public class HiddenTreasureGameStarter {
 	 * userManageCLI
 	 */
 	@Autowired
-	private HiddenTreasureUserManageCLI userManageCLI;
+	private HiddenTreasurePlayerRepositoryImpl userManageCLI;
 
 	/**
 	 * gameRules
@@ -50,7 +50,7 @@ public class HiddenTreasureGameStarter {
 		ui.printStory();
 		//Create Player or check if existing player has already saved game
 		Players player = userManageCLI.selectPlayers();
-		user = new User(player.getName(), player.getLevel(), player.getGem(), player.getHealth(), player.getPalace());
+		user = new User(player.getName(), player.getLevel(), player.getGem(), player.getHealth(), player.getPalace(),player.getSkills());
 		user.setUI(ui);
 		boolean gotResult = false;
 		System.out.println(HiddenTreasureConstants.ANSI_PURPLE +"Let's go!! ");

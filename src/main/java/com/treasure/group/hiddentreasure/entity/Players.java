@@ -37,6 +37,9 @@ public class Players implements Serializable {
 
 	@Column(name = "health")
 	private long health;
+	
+	@Column(name = "skills")
+	private String skills;
 
 	@Column(name = "palace")
 	@Lob
@@ -119,6 +122,20 @@ public class Players implements Serializable {
 	 */
 	public final void setPalace(Palace palace) {
 		Palace = palace;
+	}
+
+	/**
+	 * @return the skills
+	 */
+	public final String getSkills() {
+		return skills;
+	}
+
+	/**
+	 * @param skills the skills to set
+	 */
+	public final void setSkills(String skills) {
+		this.skills = skills;
 	}
 
 }

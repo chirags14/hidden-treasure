@@ -17,50 +17,51 @@ public class User {
 	/**
 	 * name
 	 */
-	public String name;
+	private String name;
 
 	/**
 	 * map
 	 */
 	@Autowired
-	public Palace map;
+	private Palace map;
 
 	/**
 	 * level
 	 */
-	public long level;
+	private long level;
 
 	/**
 	 * gems
 	 */
-	public long gems;
+	private long gems;
 
 	/**
 	 * health
 	 */
-	public long health;
+	private long health;
 
 	/**
 	 * health
 	 */
-	public String UserSkills;
+	public String userSkills;
 
 	/**
 	 * ui
 	 */
-	public HiddenTreasureUIservice ui;
+	private HiddenTreasureUIservice ui;
 
 	@Override
 	public String toString() {
 		return this.getName() + "'s Health : " + this.getHealth() + " Gems: " + this.getGems();
 	}
 
-	public User(String name, long level, long gems, long health, Palace palace) {
+	public User(String name, long level, long gems, long health, Palace palace ,String skills) {
 		this.name = name;
 		this.level = level;
 		this.gems = gems;
 		this.health = health;
 		this.map = palace;
+		this.userSkills=skills;
 	}
 
 	public User(String name) {

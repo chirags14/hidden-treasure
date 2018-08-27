@@ -18,6 +18,7 @@ public interface HiddenTreasureUIservice {
 	void hitWallMessage();
 	void displayExploreError();
 	String readUserInputString();
+	String readAboutPlayer();
 	int readUserInputInt();
 	void destroy();
 	void displayUsers(List<Players> users);

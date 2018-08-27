@@ -86,18 +86,18 @@ public class HiddenTreasureConsoleBasedUI implements HiddenTreasureUIservice {
 		printHeader();
 		int i = 0;
 		for (Players user : users) {
-			System.out.println(++i + ")   " + user.getName() + "\t" + user.getGem() + "\t" + user.getHealth());
+			System.out.println(++i + ")   " + user.getName() + "\t" + user.getGem() + "\t" + user.getHealth() + "\t" + user.getSkills());
 		}
-		System.out.println(++i + ")   create New user");
-		System.out.println(++i + ")   Delete A user");
+		System.out.println(++i + ")   Create New User");
+		System.out.println(++i + ")   Delete A User");
 		System.out.flush();
 	}
 
 	private void printHeader() {
 		System.out.println(HiddenTreasureConstants.ANSI_YELLOW + HiddenTreasureConstants.BOLD + "Select a user from the following");
-		System.out.println(HiddenTreasureConstants.ANSI_RED +"----------------------------------");
-		System.out.println(HiddenTreasureConstants.ANSI_YELLOW + HiddenTreasureConstants.BOLD + "\tName\tGems\tHealth");
-		System.out.println(HiddenTreasureConstants.ANSI_RED+ "----------------------------------");
+		System.out.println(HiddenTreasureConstants.ANSI_RED +"----------------------------------------------------------------");
+		System.out.println(HiddenTreasureConstants.ANSI_YELLOW + HiddenTreasureConstants.BOLD + "\tName\tGems\tHealth\tSkills");
+		System.out.println(HiddenTreasureConstants.ANSI_RED+ "----------------------------------------------------------------");
 		System.out.flush();
 	}
 
@@ -170,8 +170,15 @@ public class HiddenTreasureConsoleBasedUI implements HiddenTreasureUIservice {
 
 	@Override
 	public void printHelp() {
-		System.out.println(HiddenTreasureConstants.ANSI_WHITE_BACKGROUND + HiddenTreasureConstants.ANSI_CYAN + "You have to answer monster riddle.\n" + "If you answer correctly you will get gems.\n"
+		System.out.println(HiddenTreasureConstants.ANSI_BLACK_BACKGROUND + HiddenTreasureConstants.ANSI_CYAN + "You have to answer monster riddle.\n" + "If you answer correctly you will get gems.\n"
 				+ "It will give you hints if you pay gems by typing '#pay' \n"
 				+ "You can type '#giveup' to fight the monster\n");
+	}
+
+	@Override
+	public String readAboutPlayer() {
+		System.out.println(HiddenTreasureConstants.ANSI_CYAN +HiddenTreasureConstants.BOLD + "Tell Something About Your Skills ?");
+		String input = scan.nextLine();
+		return input;
 	}
 }

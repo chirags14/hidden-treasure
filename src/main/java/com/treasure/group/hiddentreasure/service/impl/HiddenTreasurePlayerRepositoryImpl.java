@@ -16,7 +16,7 @@ import com.treasure.group.hiddentreasure.service.HiddenTreasureUIservice;
  *
  */
 @Component
-public class HiddenTreasureUserManageCLI {
+public class HiddenTreasurePlayerRepositoryImpl {
 
 	/**
 	 * usersRepositorys
@@ -44,8 +44,13 @@ public class HiddenTreasureUserManageCLI {
 		List<Players> users = playersRepository.findAll();
 		if (users != null && users.size() > 0) {
 			ui.displayUsers(users);
-
-			int selected = ui.readUserInputInt();
+			int selected =0;
+			try {
+				selected = ui.readUserInputInt();
+			}catch(java.util.InputMismatchException ex) {
+				ui.displayInvalidOptionMessage();
+				//TODO - handle exception
+			}
 			if (selected > 0 && selected <= users.size()) {
 				return users.get(selected - 1);
 			} else if (selected == users.size() + 2) {
@@ -81,12 +86,14 @@ public class HiddenTreasureUserManageCLI {
 	public Players addPlayer() {
 		ui.userIntroMessage();
 		String name = ui.readUserInputString();
+		String skills = ui.readAboutPlayer();
 		Players selectedUser = new Players();
 		selectedUser.setName(name);
 		selectedUser.setHealth(100);
 		selectedUser.setGem(0);
 		selectedUser.setLevel(1);
 		selectedUser.setPalace(map);
+		selectedUser.setSkills(skills);
 		playersRepository.save(selectedUser);
 		return selectedUser;
 	}
