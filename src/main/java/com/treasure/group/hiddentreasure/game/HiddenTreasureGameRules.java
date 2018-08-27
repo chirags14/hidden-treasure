@@ -65,7 +65,7 @@ public class HiddenTreasureGameRules implements GameRules {
 				//Check for help	
 				} else if (userAnswer.equalsIgnoreCase(HiddenTreasureCommands.HELP)) {
 					ui.printHelp();
-				//If Plyaer dont know riddle answer and willing to pay gems then provide hint	
+				//If Player don't know riddle answer and willing to pay gems then provide hint	
 				} else if (userAnswer.equalsIgnoreCase(HiddenTreasureCommands.PAY)) {
 					if (player.getGems() == 0) {
 						ui.displayNoGemsMessage();

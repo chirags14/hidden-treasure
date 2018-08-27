@@ -7,6 +7,11 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
+/**
+ * @author chirag
+ * Spring boot Main class
+ *
+ */
 @SpringBootApplication
 @EnableJpaRepositories
 @EnableAutoConfiguration
@@ -14,6 +19,7 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 public class HiddenTreasureApplication {
 
 	public static void main(String[] args) {
+		//enable ANSOI for console for colored texts
 		AnsiConsole.systemInstall();
 		SpringApplication.run(HiddenTreasureApplication.class, args);
 	}
